@@ -27,3 +27,8 @@ if (x === 3) {
 
 // change
 console.log('Now it prints this.');
+let sum = 0;
+for (let i = 0; i < 10; i++) {
+    sum += (i + 1) ** 2;
+}
+console.log(sum);
