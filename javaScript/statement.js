@@ -33,19 +33,12 @@ for (let i = 0; i < 10; i++) {
 }
 console.log(sum);
 
-Fibonacci(n) {
-  if(n <= 0) {
-    return 0;
-  }
-  if(n === 1) {
-    return 1;
-  }
-  return Fibonacci(n - 1) + Fibonacci(n - 2);
-}
-
 let fib = 0;
-let n = 0;
+let fib1 = 1;
+let fib2 = 0;
 while (fib <= 1000) {
-  fib =  Fibonacci(n++);
+  fib2 = fib + fib1
+  fib = fib1;
+  fib1 = fib2;
 }
-console.log(fib);
+console.log(fib2);
