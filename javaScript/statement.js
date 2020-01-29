@@ -32,3 +32,20 @@ for (let i = 0; i < 10; i++) {
     sum += (i + 1) ** 2;
 }
 console.log(sum);
+
+Fibonacci(n) {
+  if(n <= 0) {
+    return 0;
+  }
+  if(n === 1) {
+    return 1;
+  }
+  return Fibonacci(n - 1) + Fibonacci(n - 2);
+}
+
+let fib = 0;
+let n = 0;
+while (fib <= 1000) {
+  fib =  Fibonacci(n++);
+}
+console.log(fib);
