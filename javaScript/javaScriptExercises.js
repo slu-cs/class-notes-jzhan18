@@ -38,24 +38,20 @@ const check = function(book, tauthor) {
 const sample = new Book('CS', ['a', 'b', 'c']);
 console.log(check(sample, 'd'));
 
-const myRange = function(max) {
+const myRange = function(min, max) {
   let range = [];
-  for (let i = 0; i < max; i++) {
-    range.push(i);
+  if (max == null) {
+    for (let i = 0; i < max; i++) {
+      range.push(i);
+    }
+  } else {
+    for (let i = min; i < max; i++) {
+      range.push(i);
+    }
   }
   return range;
 };
 
 console.log(myRange(5));
-
-
-
-const myRange = function(min, max) {
-  let range = [];
-  for (let i = min; i < max; i++) {
-    range.push(i);
-  }
-  return range;
-};
 
 console.log(myRange(3, 8));
