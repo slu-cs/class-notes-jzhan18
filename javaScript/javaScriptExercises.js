@@ -41,7 +41,7 @@ console.log(check(sample, 'd'));
 const myRange = function(min, max) {
   let range = [];
   if (max == null) {
-    for (let i = 0; i < max; i++) {
+    for (let i = 0; i < min; i++) {
       range.push(i);
     }
   } else {
