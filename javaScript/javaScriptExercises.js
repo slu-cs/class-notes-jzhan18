@@ -20,3 +20,20 @@ const lgst = function(courses) {
 };
 
 console.log(lgst(courses));
+
+const Book = function(title, authors) {
+  this.title = title;
+  this.authors = authors;
+};
+
+const check = function(book, tauthor) {
+  for (author of book.authors) {
+    if (tauthor === author) {
+      return true;
+    }
+  }
+  return false;
+};
+
+const sample = new Book('CS', ['a', 'b', 'c']);
+console.log(check(sample, 'b'));
