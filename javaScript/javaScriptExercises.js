@@ -19,4 +19,4 @@ const lgst = function(courses) {
   return subject;
 };
 
-console.log(lgst);
+console.log(lgst(courses));
