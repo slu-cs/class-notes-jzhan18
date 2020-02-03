@@ -36,4 +36,4 @@ const check = function(book, tauthor) {
 };
 
 const sample = new Book('CS', ['a', 'b', 'c']);
-console.log(check(sample, 'b'));
+console.log(check(sample, 'd'));
