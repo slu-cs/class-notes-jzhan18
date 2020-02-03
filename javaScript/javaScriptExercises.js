@@ -11,7 +11,7 @@ const courses = [cs332, cs364, phys, stat, cs250];
 
 const lgst = function(courses) {
   let subject = courses[0];
-  for (const course in courses) {
+  for (const course of courses) {
     if (subject.number < course.number) {
       subject = course;
     }
