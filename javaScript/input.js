@@ -13,5 +13,5 @@ const user = readline.createInterface({
 
 // Console input
 user.question('Enter a filename: ', function(filename) {
-  console.log(filname);
+  console.log(filename);
 });
