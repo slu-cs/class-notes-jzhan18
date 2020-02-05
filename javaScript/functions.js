@@ -24,7 +24,7 @@ const rectangle = {
   width: 10,
   height: 20,
   area: function() {
-    return this.widht * this.height;
+    return this.width * this.height;
   }
 };
 
