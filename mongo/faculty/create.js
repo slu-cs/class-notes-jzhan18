@@ -30,19 +30,22 @@ const lee = new Professor({
 
 // Delete any previous data
 mongoose.connection.dropDatabase(function() {
-    // Save the new data
-    harcourt.save(function(error) {
-      if (error) console.error(error.stack);
-        torrey.save(function(error) {
-          if (error) console.error(error.stack);
-            lee.save(function(error) {
-              if (error) console.error(error.stack);
 
-              // Disconnect
-              mongoose.connection.close(function() {
-                console.log('Database is ready');
-              });
-            });
+  // Save the new data
+  harcourt.save(function(error) {
+    if (error) console.error(error.stack);
+
+    torrey.save(function(error) {
+      if (error) console.error(error.stack);
+
+      lee.save(function(error) {
+        if (error) console.error(error.stack);
+
+        // Disconnect
+        mongoose.connection.close(function() {
+          console.log('Database is ready.');
         });
+      });
     });
+  });
 });
