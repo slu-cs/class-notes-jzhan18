@@ -11,3 +11,6 @@ const filter = function(n, f) {
 };
 const odds = filter(numbers, x => x%2 > 0);
 console.log(odds)
+
+const numbers1 = [4, 2, 5, 1, 3];
+numbers1.sort((a, b) =>)
