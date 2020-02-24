@@ -1,0 +1,46 @@
+<!-- Example with a loop over a JQuery object. -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JQuery Objects</title>
+  </head>
+  <body>
+    <form>
+      <h1>Add an item</h1>
+      <input type="text" name="text">
+      <button type="submit">Submit</button>
+    </form>
+    <div id="history">
+      <ul id="list">Things to do:
+      </ul>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script>
+      // Respond to submit events
+      let item = 0;
+      $('form').on('submit', function(event) {
+        const form = $(this); // JQuery object representing the form
+        event.preventDefault(); // Don't really submit the form
+
+        // Translate each input value into a list item
+        const inputs = form.find('input'); // JQuery object represent all inputs
+        for (let input of inputs) {
+          input = $(input); // Turn into a JQuery object
+          const li = $(`<li id="itm${item}">${input.val()}
+            <button id = "btn${item}">Delete</button>
+            </li>`); // New list item
+          $('#list').append(li);
+          input.val(''); // Empty out the box
+          item++;
+        };
+      });
+
+      $('form').on('click', 'button', function(event) {
+        const button = $(this);
+        const id = button.attr('id');
+        console.log('Clicked button', id);
+      });
+    </script>
+  </body>
+</html>
