@@ -60,6 +60,10 @@ const question = function(prompt) {
 };
 
 // B. Make small talk again, using promises.
+Promise.all(question)
+  .then(question("What's your name?"))
+  .then(question("How are you?"))
+  .catch(error => console.error(error.stack));
 
 
 //////////////////////////////////////////////////////////////// Question 4
