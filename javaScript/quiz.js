@@ -12,20 +12,27 @@ const labs = [
 const seatNum = labs.map(d => d.seats);
 
 // B. Generate a new array containing only the labs with more than 10 seats (by invoking the built-in filter method).
-const arr = labs.filter(d = > d.seats > 10);
+const arr = labs.filter(d => d.seats > 10);
 
 // C. Sort the existing array in order of (increasing) seat numbers (by invoking the built-in sort method).
-
+labs.sort(function(a, b) {
+  return a.seats - b.seats;
+});
 
 //////////////////////////////////////////////////////////////// Question 2
 
 const numbers = [5, 4, 3, 2, 1];
 
 // A. Get the first even number (by invoking the built-in find method).
-
+numbers.find(x => x);
 
 // B. Define a standalone find function. The array is its first argument and the callback is its second argument.
-
+const find = function(arr, f) {
+  for (const e of arr) {
+    if (f(e)) return e;
+  }
+  return null;
+};
 
 //////////////////////////////////////////////////////////////// Question 3
 
@@ -38,7 +45,9 @@ const user = readline.createInterface({
 });
 
 // A. Make small talk, using traditional callbacks.
-
+user.question("What's your name?", function(response) {
+  console.log("My name is" + response);
+})
 
 // The user.question method doesn't actually return a promise, so here is a question function that does.
 // Call this question function in part B instead of calling the user.question method.
