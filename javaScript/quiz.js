@@ -45,10 +45,10 @@ const user = readline.createInterface({
 });
 
 // A. Make small talk, using traditional callbacks.
-user.question("What's your name?", function(r1) {
-  console.log("My name is " + r1 + ".");
+user.question("What's your name? ", function(r1) {
+  console.log("Hello " + r1 + ".");
   user.question("How are you? ", function(r2) {
-    console.log("I'm " + r2 + ".");
+    console.log("I'm also " + r2 + ".");
     process.exit(0);
   });
 });
@@ -60,10 +60,15 @@ const question = function(prompt) {
 };
 
 // B. Make small talk again, using promises.
-Promise.all(question)
-  .then(question("What's your name?"))
-  .then(question("How are you?"))
-  .catch(error => console.error(error.stack));
+question("What's your name? ")
+  .then(function(r1) {
+    console.log("Hello " + r1 + ".");
+    return question("How are you? ");
+  })
+  .then(function(r2) {
+    console.log("I am also " + r2 + ".");
+    process.exit(0);
+  })
 
 
 //////////////////////////////////////////////////////////////// Question 4
