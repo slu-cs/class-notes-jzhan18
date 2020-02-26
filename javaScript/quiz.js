@@ -45,11 +45,12 @@ const user = readline.createInterface({
 });
 
 // A. Make small talk, using traditional callbacks.
+/*
 user.question("What's your name? ", function(r1) {
   console.log("Hello " + r1 + ".");
   user.question("How are you? ", function(r2) {
     console.log("I'm also " + r2 + ".");
-    // process.exit(0);
+    process.exit(0);
   });
 });
 
@@ -58,7 +59,7 @@ user.question("What's your name? ", function(r1) {
 const question = function(prompt) {
   return new Promise(resolve => user.question(prompt, resolve));
 };
-
+*/
 // B. Make small talk again, using promises.
 question("What's your name? ")
   .then(function(r1) {
