@@ -49,7 +49,7 @@ user.question("What's your name? ", function(r1) {
   console.log("Hello " + r1 + ".");
   user.question("How are you? ", function(r2) {
     console.log("I'm also " + r2 + ".");
-    process.exit(0);
+    // process.exit(0);
   });
 });
 
