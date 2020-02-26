@@ -35,7 +35,7 @@ const find = function(arr, f) {
 };
 
 //////////////////////////////////////////////////////////////// Question 3
-
+/*
 // This creates the user object described on the quiz.
 // It has a question method you can call in part A.
 const readline = require('readline');
@@ -45,7 +45,7 @@ const user = readline.createInterface({
 });
 
 // A. Make small talk, using traditional callbacks.
-/*
+
 user.question("What's your name? ", function(r1) {
   console.log("Hello " + r1 + ".");
   user.question("How are you? ", function(r2) {
@@ -87,7 +87,8 @@ const f2 = function() {
 };
 
 // Run f1 and f2 in parallel and log 'f1', 'f2', or 'equal' to indicate which function returned the larger result.
-Promise.all(f1(), f2())
+const values = [f1(), f2()]
+Promise.all(values)
   .then(function(f1, f2) {
     if (f1 > f2) console.log("f1");
     if (f1 < f2) console.log("f2");
