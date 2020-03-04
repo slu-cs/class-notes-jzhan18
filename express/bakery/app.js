@@ -26,7 +26,7 @@ app.get('/', function(request, response) {
 // Handle undefined routes
 app.use(function(request, response, next) {
   console.log('Replied with 404');
-  response.statue(404).end();
+  response.status(404).end();
 });
 
 // Handle other errors
