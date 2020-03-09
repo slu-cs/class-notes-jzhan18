@@ -9,8 +9,8 @@ router.get('/', function(request, response) {
   response.send(`
     <h1>Cakes</h1>
     <ul>
-      <li><a href="/pies/apple">Vanilla</a></li>
-      <li><a href="/pies/cherry">Chocolate</a></li>
+      <li><a href="/pies/apple">Apple</a></li>
+      <li><a href="/pies/cherry">Cherry</a></li>
     </ul>
     `);
 });
