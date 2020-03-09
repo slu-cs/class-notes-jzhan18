@@ -1,0 +1,9 @@
+<html>
+  <%- include('../head'); -%>
+  <h1>Pies</h1>
+  <ul>
+    <%_ for (const pie of pies) { -%>
+    <li><a href="/pies/<%= pie.id -%>"><%= pie.flavor -%></a></li>
+    <%_ } -%>
+  </ul>
+</html>
