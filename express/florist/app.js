@@ -18,7 +18,7 @@ app.get('/favicon.ico', function(request, response) {
 
 // Log requests to the console
 app.use(function(request, response, next) {
-  console.log('-----------------', new Date().toLocaleTimeString());
+  console.log('---------------------', new Date().toLocaleTimeString());
   console.log(request.method, request.url);
   console.log('Body =', request.body);
   next(); // Keep handling this request
@@ -29,7 +29,7 @@ app.get('/', function(request, response) {
   response.render('index');
 });
 
-// Routing
+// Manage a collection of flowers
 app.use('/flowers', require('./flowers.js'));
 
 // Handle undefined routes
@@ -45,5 +45,5 @@ app.use(function(error, request, response, next) {
 });
 
 // Start the server
-app.listen(3000); // port 3000
-console.log('Server is ready.')
+app.listen(3000);
+console.log('Server is ready.');
