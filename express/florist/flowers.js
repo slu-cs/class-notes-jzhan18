@@ -30,7 +30,7 @@ router.post('/', function(request, response) {
   const flower = request.body;
   if (!flower.id) {
     response.status(400).send('Missing ID');
-  } else if (flower.find(f => f.id === flower.id)) {
+  } else if (flowers.find(f => f.id === flower.id)) {
     response.status(400).send('Duplicate');
   } else {
     flowers.push(flower);
