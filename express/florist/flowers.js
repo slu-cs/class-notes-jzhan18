@@ -39,7 +39,7 @@ router.post('/', function(request, response) {
 });
 
 // DELETE /flowers/id
-rouer.delete('/:id', function(requset, response, next) {
+router.delete('/:id', function(requset, response, next) {
   const flower = flowers.find(f => f.id === request.params.id);
   if (!flower) {
     next();
